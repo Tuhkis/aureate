@@ -192,7 +192,7 @@ int download(int argc, char *argv[]) {
 
 		//if directory for package already exists, clone
 		if (stat(pkg, &st) == -1) {
-			printf(BLUE ":: " RESET "Fetching repo..."); fflush(stdout);
+			printf(BLUE ":: " RESET "Fetching repo... "); fflush(stdout);
 			git_repository *repo = NULL;
 			git_clone(&repo, clone_url, pkg, NULL);
 			chdir(pkg);
@@ -205,7 +205,7 @@ int download(int argc, char *argv[]) {
 			}
 		//else, pull latest changes
 		} else {
-			printf(BLUE ":: " RESET "Fetching latest changes..."); fflush(stdout);
+			printf(BLUE ":: " RESET "Fetching latest changes... "); fflush(stdout);
 			git_repository *repo;
 			git_remote *remote;
 
