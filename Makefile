@@ -1,10 +1,11 @@
 PREFIX = /usr/local
 LIBS = -lgit2 -lcurl -ljson-c
-FLAGS = ${LIBS}
+FLAGS = ${LIBS} -Os
 PROG = aureate
 
 all:
 	cc ${PROG}.c ${FLAGS} -o ${PROG}
+	strip ${PROG}
 
 debug:
 	clang ${PROG}.c -Wall -Werror -fsanitize=undefined,address ${FLAGS} -o ${PROG}
